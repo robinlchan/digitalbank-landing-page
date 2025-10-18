@@ -132,6 +132,130 @@ button:hover {
     background-color: var(--green-500);
     transition: var(--transition-default);
 }
+/* HAMBURGER STYLES */
+.navbar .hamburger {
+    display: none;
+    z-index: 3;
+}
+.navbar .hamburger:hover {
+    cursor: pointer;
+}
+.bar1, 
+.bar2, 
+.bar3 {
+    background-color: var(--blue-950);
+    height: 4px;
+    width: 36px;
+    margin: 3px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+.changeColor {
+    background-color: var(--green-500);
+}
+.animateBar1 {
+    animation: flipBar1 0.5s forwards;
+}
+.animateBar2 {
+    animation: fadeBar2 0.5s forwards;
+}
+.animateBar3 {
+    animation: flipBar3 0.5s forwards;
+}
+@keyframes flipBar1 {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(45deg) translate(4px, 10px);
+    }
+}
+@keyframes fadeBar2 {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+@keyframes flipBar3 {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(-45deg) translate(4px, -10px);
+    }
+}
+
+/* MOBILE NAV STYLES */
+.mobile-nav {
+    display: none;
+}
+.mobile-nav a {
+    color: var(--blue-950);
+    margin: var(--spacing-sm) 0;
+    text-decoration: none;
+}
+.mobile-nav a:hover {
+    text-decoration: underline;
+    opacity: 0.2;
+}
+
+@media screen and (max-width: 1050px) {
+    .navbar ul > li {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+        padding: var(--spacing-lg) var(--spacing-xl);
+    }
+    .navbar-menu {
+        display: none;
+    }
+    .navbar .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        position: absolute;
+        right: var(--spacing-xl);
+    }
+    .mobile-nav {
+        width: 0;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 6;
+        top: 100px;
+        right: 20px;
+        padding: var(--spacing-md) var(--spacing-lg);
+        background-color: var(--white);
+        border-radius: 10px;
+    }
+    .mobile-nav.is-open {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navbar {
+        padding: var(--spacing-lg) var(--spacing-lg);
+    }
+    .navbar .hamburger {
+        right: var(--spacing-lg);
+    }
+}
 
 /* HEADER STYLES */
 .header {
