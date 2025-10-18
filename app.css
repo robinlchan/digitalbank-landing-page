@@ -8,7 +8,7 @@
     --h1-size: 48px;
     --h2-size: 38px;
     --h3-size: 24px;
-    --h4-size: 18px;
+    --h4-size: 15px;
     /* COLORS */
     --blue-950: hsl(233, 26%, 24%);
     --green-500: hsl(136, 64%, 51%);
@@ -201,4 +201,48 @@ button:hover {
 
 .why-section .card-container .card {
     font-size: 15px;
+}
+
+/* ARTICLE STYLES */
+.article-section {
+    width: 100%;
+    padding: var(--padding-default);
+    background-color: var(--gray-50);
+}
+
+.article-section h2 {
+    margin: calc(var(--spacing-xl)*2) 0 var(--spacing-2xl) 0;
+}
+
+.article-section .card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
+    margin-bottom: calc(var(--spacing-xl)*2);
+}
+
+.article-section .card-container .card {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+}
+
+.article-section .card .author {
+    font-size: 10px;
+}
+
+.article-section .card .quote {
+    line-height: var(--spacing-md);
+    font-size: 12px;
+}
+
+.article-section .card .content {
+    padding: var(--spacing-lg);
+}
+
+#article-icon {
+    width: 100%;
+    height: 190px;
 }
