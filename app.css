@@ -5,9 +5,9 @@
     --font-weight-body: 300;
     --font-weight-bold: 700;
     --font-size-body: 18px;
-    --h1-size: 32px;
-    --h2-size: 28px;
-    --h3-size: 24px;
+    --h1-size: 48px;
+    --h2-size: 38px;
+    --h3-size: 28px;
     --h4-size: 18px;
     /* COLORS */
     --blue-950: hsl(233, 26%, 24%);
@@ -25,6 +25,7 @@
     --spacing-xl: 2rem;
     --spacing-2xl: 3rem;
     --border-radius: 20px;
+    --padding-default: 0 calc(var(--spacing-2xl)*3);
     /* OTHER */
     --transition-default: all 0.3s ease;
 }
@@ -32,12 +33,13 @@
 * {
     box-sizing: border-box;
 }
+
 html, 
 body {
     margin: 0;
-    padding: 0 var(--spacing-2xl);
+    padding: 0;
 }
-body {
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,6 +77,10 @@ ul {
     padding-left: 0;
 }
 
+p {
+    color: var(--gray-600);
+}
+
 button {
     border-radius: var(--border-radius);
     padding: var(--spacing-sm) var(--spacing-xl);
@@ -94,9 +100,10 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0;
+    padding: var(--padding-default);
     width: 100%;
     background-color: var(--white);
+    z-index: 5;
 }
 
 .navbar ul > li {
@@ -121,4 +128,49 @@ button:hover {
     height: 4px;
     background-color: var(--green-500);
     transition: var(--transition-default);
+}
+
+/* HEADER STYLES */
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: var(--padding-default);
+    background-color: var(--gray-50);
+    position: relative;
+}
+
+.header .section-container {
+    width: 100%;
+    height: 100%;
+    padding: calc(var(--spacing-2xl)*4) 0;
+}
+
+.header .section-container::before {
+    content: url('images/bg-intro-desktop.svg');
+    position: absolute;
+    top: -43%;
+    right: -32%;
+    z-index: 1;
+}
+
+.header .section-container .content-left {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.content-left h1 {
+    color: var(--blue-950);
+}
+
+.header .section-container .content-right {
+    position: absolute;
+    top: -30%;
+    right: -9%;
+    z-index: 3;
 }
