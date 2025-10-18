@@ -7,7 +7,7 @@
     --font-size-body: 18px;
     --h1-size: 48px;
     --h2-size: 38px;
-    --h3-size: 28px;
+    --h3-size: 24px;
     --h4-size: 18px;
     /* COLORS */
     --blue-950: hsl(233, 26%, 24%);
@@ -55,6 +55,7 @@ h2,
 h3,
 h4 {
     font-weight: var(--font-weight-heading);
+    color: var(--blue-950);
     margin: 0;
     padding: 0;
 }
@@ -79,6 +80,7 @@ ul {
 
 p {
     color: var(--gray-600);
+    line-height: var(--spacing-lg);
 }
 
 button {
@@ -112,6 +114,7 @@ button:hover {
     color: var(--gray-600);
     transition: var(--transition-default);
     position: relative;
+    font-size: 15px;
 }
 
 .navbar ul > li:hover {
@@ -164,13 +167,38 @@ button:hover {
     text-align: left;
 }
 
-.content-left h1 {
-    color: var(--blue-950);
-}
-
 .header .section-container .content-right {
     position: absolute;
     top: -30%;
     right: -9%;
+    z-index: 4;
+}
+
+/* WHY-SECTION STYLES */
+.why-section {
+    width: 100%;
+    padding: var(--padding-default);
+    background-color: var(--gray-100);
     z-index: 3;
+}
+
+.why-section .top {
+    margin-top: calc(var(--spacing-2xl)*2);
+    max-width: 650px;
+}
+
+.why-section .top h2 {
+    margin-bottom: var(--spacing-xl);
+}
+
+.why-section .card-container {
+    display: flex;
+    margin-top: var(--spacing-2xl);
+    margin-bottom: calc(var(--spacing-2xl)*2);
+    line-height: var(--spacing-2xl);
+    gap: var(--spacing-2xl);
+}
+
+.why-section .card-container .card {
+    font-size: 15px;
 }
