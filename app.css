@@ -38,6 +38,7 @@ html,
 body {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 main {
     display: flex;
@@ -259,44 +260,77 @@ button:hover {
 
 /* HEADER STYLES */
 .header {
-    display: flex;
-    flex-direction: row;
     width: 100%;
-    height: 100%;
     padding: var(--padding-default);
     background-color: var(--gray-50);
-    position: relative;
 }
 
 .header .section-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     width: 100%;
     height: 100%;
+    position: relative;
     padding: calc(var(--spacing-2xl)*4) 0;
 }
 
-.header .section-container::before {
-    content: url('images/bg-intro-desktop.svg');
-    position: absolute;
-    top: -43%;
-    right: -32%;
-    z-index: 1;
-}
-
 .header .section-container .content-left {
-    display: flex;
-    flex-direction: column;
     width: 35%;
-    justify-content: center;
-    align-items: flex-start;
-    text-align: left;
 }
 
 .header .section-container .content-right {
-    display: flex;
     position: absolute;
     top: -30%;
-    right: -9%;
+    right: -21%;
     z-index: 4;
+}
+
+.header .section-container .content-right::before {
+    content: url('images/bg-intro-desktop.svg');
+    position: absolute;
+    top: -9%;
+    right: -45%;
+    z-index: -2;
+}
+
+@media screen and (max-width: 1350px) {
+    .header .section-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0 var(--spacing-lg);
+    }
+    .header .section-container .content-left {
+        order: 2;
+        width: 100%;
+        max-height: 520px;
+        align-items: center;
+        text-align: center;
+    }
+    .header .section-container .content-right {
+        order: 1;
+        width: 100%;
+        max-height: 520px;
+        position: static;
+        justify-content: center;
+    }
+    .header .section-container .content-right::before {
+        height: 100%;
+        width: 100%;
+        top: -40%;
+        right: 20%;
+    }
+    #header-image {
+        width: 70%;
+        object-fit: cover;
+        z-index: 11;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .header {
+        padding: var(--spacing-lg) var(--spacing-xl);
+    }
 }
 
 /* WHY-SECTION STYLES */
