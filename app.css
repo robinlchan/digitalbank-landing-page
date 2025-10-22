@@ -387,6 +387,32 @@ button:hover {
     height: 190px;
 }
 
+@media screen and (max-width: 1150px) {
+    .article-section .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+    #article-icon {
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .article-section {
+        padding: var(--spacing-lg) var(--spacing-lg);
+    }
+    .article-section h2 {
+        text-align: center;
+    }
+    .article-section .card-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
 /* FOOTER STYLES */
 footer {
     width: 100%;
