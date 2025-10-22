@@ -201,7 +201,7 @@ button:hover {
 }
 .mobile-nav a:hover {
     text-decoration: underline;
-    opacity: 0.2;
+    color: var(--cyan-400);
 }
 
 @media screen and (max-width: 1050px) {
@@ -249,7 +249,7 @@ button:hover {
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 850px) {
     .navbar {
         padding: var(--spacing-lg) var(--spacing-lg);
     }
@@ -304,7 +304,7 @@ button:hover {
 
 .why-section .top {
     margin-top: calc(var(--spacing-2xl)*2);
-    max-width: 650px;
+    width: 650px;
 }
 
 .why-section .top h2 {
@@ -326,13 +326,14 @@ button:hover {
 @media screen and (max-width: 950px) {
     .why-section .top {
         text-align: center;
+        width: 100%;
     }
     .why-section .card-container {
         flex-direction: column;
         text-align: center;
     }
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
     .why-section {
         padding: var(--spacing-md) var(--spacing-lg);
     }
@@ -454,4 +455,54 @@ footer .footer-container {
 .footer-container .col > ul > li:hover {
     cursor: pointer;
     color: var(--green-500);
+}
+
+@media screen and (max-width: 1050px) {
+    .footer-container .col:nth-child(1) {
+        margin-right: calc(var(--spacing-2xl)*2);
+    }   
+    .footer-container .col:nth-child(4) {
+        padding-left: var(--spacing-lg);
+    }
+    .footer-container .col:nth-child(4) p {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 950px){
+    footer .footer-container {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: var(--spacing-lg) 0;
+    }
+    .footer-container .col:nth-child(1) {
+        margin-right: 0;
+    }
+    .footer-container .col:nth-child(1) > ul {
+        justify-content: center;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-lg);
+    }
+    .footer-container .col:nth-child(2) {
+        padding-top: var(--spacing-lg)
+    }
+    .footer-container .col:nth-child(3) {
+        padding-bottom: var(--spacing-lg);
+    }
+    .footer-container .col:nth-child(4) {
+        text-align: center;
+        padding-left: 0;
+    }
+    .footer-container .col {
+        line-height: var(--spacing-xl);
+    }
+}
+@media screen and (max-width: 850px) {
+    footer {
+        padding: var(--spacing-lg) var(--spacing-lg);
+    }
+    footer .footer-container {
+        width: 100%;
+    }
 }
