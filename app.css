@@ -89,7 +89,7 @@ button {
   border: none;
   background: linear-gradient(to right, var(--cyan-400), var(--green-500));
   color: var(--white);
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
 }
 button:hover {
   opacity: 0.6;
@@ -112,7 +112,7 @@ button:hover {
   display: inline-block;
   margin: var(--spacing-sm);
   color: var(--gray-600);
-  transition: color 0.3s ease;
+  /* transition: color 0.3s ease; */
   position: relative;
   font-size: 0.9rem;
 }
@@ -488,7 +488,7 @@ footer {
   background-color: var(--blue-950);
 }
 
-footer .footer-container {
+.footer-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 2fr;
   grid-template-rows: 1fr;
@@ -536,12 +536,15 @@ footer .footer-container {
   }
 }
 @media screen and (max-width: 59.5rem) {
-  footer .footer-container {
+  .footer-container {
     grid-template-columns: 1fr;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: var(--spacing-lg) 0;
+  }
+  .col {
+    line-height: var(--spacing-xl);
   }
   .col:nth-child(1) {
     margin-right: 0;
@@ -560,9 +563,6 @@ footer .footer-container {
   .col:nth-child(4) {
     text-align: center;
     padding-left: 0;
-  }
-  .col {
-    line-height: var(--spacing-xl);
   }
 }
 @media screen and (max-width: 53rem) {
