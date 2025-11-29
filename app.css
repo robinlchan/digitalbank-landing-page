@@ -72,10 +72,6 @@ h4 {
   font-size: var(--h4-size);
 }
 
-a > span {
-  visibility: hidden;
-}
-
 ul {
   list-style: none;
   margin-left: 0;
@@ -418,6 +414,7 @@ button:hover {
 }
 
 .article-heading {
+  font-size: var(--h2-size);
   margin: calc(var(--spacing-xl) * 2) 0 var(--spacing-2xl) 0;
 }
 

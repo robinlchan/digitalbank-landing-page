@@ -6,6 +6,7 @@ const bar2 = document.querySelector(".bar2");
 const bar3 = document.querySelector(".bar3");
 const bar1Color = document.querySelector(".bar1");
 const bar3Color = document.querySelector(".bar3");
+const span = document.querySelectorAll("span");
 
 let toggle = true;
 
